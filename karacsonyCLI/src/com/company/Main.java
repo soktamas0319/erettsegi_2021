@@ -12,8 +12,12 @@ public class Main {
             RandomAccessFile raf = new RandomAccessFile("diszek.txt", "r");
             ArrayList<NapiBevetel> napiBevetelek = new ArrayList<>();
             try {
+                int i = 0;
                 for (String sor  = raf.readLine(); sor != null ; sor = raf.readLine()) {
-                    System.out.println(sor);
+                    NapiBevetel egyNapiBevetel = new NapiBevetel(sor);
+                    napiBevetelek.add(egyNapiBevetel);
+                    System.out.println(napiBevetelek.get(i).getNap());
+                    i++;
                 }
             } catch (IOException e) {
                 e.printStackTrace();
