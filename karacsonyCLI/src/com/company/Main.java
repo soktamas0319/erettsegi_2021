@@ -11,22 +11,32 @@ public class Main {
     public static void main(String[] args) {
         try {
             RandomAccessFile raf = new RandomAccessFile("diszek.txt", "r");
-            ArrayList<NapiBevetel> napiBevetelek = new ArrayList<>();
+            ArrayList<NapiBevetel> napiTermelesEsEladas = new ArrayList<>();
             try {
                 int i = 0;
                 for (String sor = raf.readLine(); sor != null; sor = raf.readLine()) {
                     NapiBevetel egyNapiBevetel = new NapiBevetel(sor);
-                    napiBevetelek.add(egyNapiBevetel);
-                    System.out.println(napiBevetelek.get(i).getNap() + " " + egyNapiBevetel.napiBevetel());
+                    napiTermelesEsEladas.add(egyNapiBevetel);
+                    System.out.println(napiTermelesEsEladas.get(i).getNap() + " " + egyNapiBevetel.napiBevetel());
                     i++;
                 }
 
 
                 int db = 0;
-                for (int j = 0; j < napiBevetelek.size(); j++) {
-                    db += napiBevetelek.get(j).napiKeszites();
+                for (int j = 0; j < napiTermelesEsEladas.size(); j++) {
+                    db += napiTermelesEsEladas.get(j).napiKeszites();
                 }
-                System.out.println("Összesen " + db + " darab árut készített a hölgy." );
+                System.out.println("4. feladat: Összesen " + db + " darab dísz készült." );
+
+                i = 0;
+                while ((i < napiTermelesEsEladas.size() ) &&  napiTermelesEsEladas.get(i).napiKeszites() != 0){
+                    i++;
+                }
+                if (i < napiTermelesEsEladas.size()) {
+                    System.out.println("5. feladat: Volt olyan nap, amikor egyetlen díszt sem készített: " + i);
+                } else {
+                    System.out.println("5. feladat: Nem volt olyan nap, amikor egyetlen díszt sem készített.");
+                }
 
 
             } catch (IOException e) {
