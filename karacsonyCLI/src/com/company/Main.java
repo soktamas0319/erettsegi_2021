@@ -11,7 +11,7 @@ public class Main {
             RandomAccessFile raf = new RandomAccessFile("diszek.txt", "r");
             try {
                 for (String sor  = raf.readLine(); sor != null ; sor = raf.readLine()) {
-                    System.out.println(sor + System.lineSeparator());
+                    System.out.println(sor);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
