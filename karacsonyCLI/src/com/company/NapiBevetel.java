@@ -57,5 +57,8 @@ class NapiBevetel {
     public int napiBevetel() {
         return -(harangEladott * 1000 + angyalkaEladott * 1350 + fenyofaEladott * 1500);
     }
+    public int napiKeszites() {
+        return (harangKesz + angyalkaKesz + fenyofaKesz);
+    }
 }
 
