@@ -61,6 +61,19 @@ public class Main {
                         + "Angyalka: " + angyalkaKeszlet +System.lineSeparator()
                         + "Fenyőfa:" + fenyofaKeszlet);
 
+                //legtöbbet eladott dísz
+                int osszesEladottHarang = 0;
+                int osszesEladottAngyalka = 0;
+                int osszesEladottFenyofa = 0;
+                for (int j = 0; j < napiTermelesEsEladas.size(); j++) {
+                    osszesEladottHarang += napiTermelesEsEladas.get(j).getHarangEladott();
+                    osszesEladottAngyalka += napiTermelesEsEladas.get(j).getAngyalkaEladott();
+                    osszesEladottFenyofa += napiTermelesEsEladas.get(j).getFenyofaEladott();
+                }
+                System.out.println("Eladott harang: " + osszesEladottHarang);
+                System.out.println("Eladott angyalka: " + osszesEladottAngyalka);
+                System.out.println("Eladott fenyofa: " + osszesEladottFenyofa);
+
 
             } catch (IOException e) {
                 e.printStackTrace();
