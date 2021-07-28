@@ -33,7 +33,8 @@ public class Main {
                     i++;
                 }
                 if (i < napiTermelesEsEladas.size()) {
-                    System.out.println("5. feladat: Volt olyan nap, amikor egyetlen díszt sem készített: " + i);
+                    System.out.println("5. feladat: Volt olyan nap, amikor egyetlen díszt sem készített: "
+                            + napiTermelesEsEladas.get(i).getNap());
                 } else {
                     System.out.println("5. feladat: Nem volt olyan nap, amikor egyetlen díszt sem készített.");
                 }
